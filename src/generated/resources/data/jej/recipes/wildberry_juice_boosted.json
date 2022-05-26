@@ -7,7 +7,7 @@
   ],
   "key": {
     "J": {
-      "item": "jej:strawberry_juice"
+      "item": "jej:wildberry_juice"
     },
     "M": {
       "item": "minecraft:milk_bucket"
@@ -17,6 +17,6 @@
     }
   },
   "result": {
-    "item": "jej:strawberry_juice_boosted"
+    "item": "jej:wildberry_juice_boosted"
   }
 }

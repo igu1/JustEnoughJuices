@@ -3,7 +3,7 @@ package me.ez.jej;
 import me.ez.jej.common.Effects.IcyFootEffect;
 import me.ez.jej.common.JuiceClass;
 import me.ez.jej.common.Bushes.IcyBush;
-import me.ez.jej.common.Bushes.StrawBerryBush;
+import me.ez.jej.common.Bushes.WildBerryBush;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -40,8 +40,8 @@ public class Init {
     public static final RegistryObject<Item> ICEBERRY_JUICE = ITEMS.register("iceberry_juice", () -> new JuiceClass(new Item.Properties().stacksTo(1).tab(Main.TAB)));
     public static final RegistryObject<Item> ICEBERRY_JUICE_BOOSTED = ITEMS.register("iceberry_juice_boosted", () -> new JuiceClass(new Item.Properties().rarity(Rarity.RARE).stacksTo(1).tab(Main.TAB)));
 
-    public static final RegistryObject<Item> STRAWBERRY_JUICE = ITEMS.register("strawberry_juice",() -> new JuiceClass(new Item.Properties().stacksTo(1).tab(Main.TAB)));
-    public static final RegistryObject<Item> STRAWBERRY_JUICE_BOOSTED = ITEMS.register("strawberry_juice_boosted", () -> new JuiceClass(new Item.Properties().rarity(Rarity.RARE).stacksTo(1).tab(Main.TAB)));
+    public static final RegistryObject<Item> WILDBERRY_JUICE = ITEMS.register("wildberry_juice",() -> new JuiceClass(new Item.Properties().stacksTo(1).tab(Main.TAB)));
+    public static final RegistryObject<Item> WILDBERRY_JUICE_BOOSTED = ITEMS.register("wildberry_juice_boosted", () -> new JuiceClass(new Item.Properties().rarity(Rarity.RARE).stacksTo(1).tab(Main.TAB)));
 
     public static final RegistryObject<Item> DRIEDKELP_JUICE = ITEMS.register("driedkelp_juice",() -> new JuiceClass(new Item.Properties().stacksTo(1).tab(Main.TAB)));
     public static final RegistryObject<Item> DRIEDKELP_JUICE_BOOSTED = ITEMS.register("driedkelp_juice_boosted", () -> new JuiceClass(new Item.Properties().rarity(Rarity.RARE).stacksTo(1).tab(Main.TAB)));
@@ -57,14 +57,16 @@ public class Init {
 
 
     public static final RegistryObject<Item> EMERALD_DUST = ITEMS.register("emerald_dust",() -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> GLASS_BOTTLE = ITEMS.register("glass_bottle",() -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
     public static final RegistryObject<BlockItem> ICE_BERRY = ITEMS.register("ice_berry",() -> new BlockItem(Init.ICE_BERRY_BUSH.get(), new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build())));
-    public static final RegistryObject<BlockItem> STRAW_BERRY = ITEMS.register("straw_berry",() -> new BlockItem(Init.STRAW_BERRY_BUSH.get(), new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).build())));
+    public static final RegistryObject<BlockItem> WILD_BERRY = ITEMS.register("wild_berry",() -> new BlockItem(Init.WILD_BERRY_BUSH.get(), new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).build())));
 
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
     //Blocks
     public static final RegistryObject<IcyBush> ICE_BERRY_BUSH = BLOCKS.register("iceberry_bush", IcyBush::new);
-    public static final RegistryObject<StrawBerryBush> STRAW_BERRY_BUSH = BLOCKS.register("strawberry_bush", StrawBerryBush::new);
+    public static final RegistryObject<WildBerryBush> WILD_BERRY_BUSH = BLOCKS.register("wildberry_bush", WildBerryBush::new);
 
 
     public static final DeferredRegister<MobEffect> EFFECT = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Main.MOD_ID);

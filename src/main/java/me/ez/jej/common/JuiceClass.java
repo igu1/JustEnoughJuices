@@ -81,8 +81,8 @@ public class JuiceClass extends PotionItem {
                 list.add(new MobEffectInstance(MobEffects.INVISIBILITY, 1200, 0));
             }
 
-        } else if (Init.STRAWBERRY_JUICE.get() == stack.getItem() || Init.STRAWBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.STRAWBERRY_JUICE_BOOSTED.get()) {
+        } else if (Init.WILDBERRY_JUICE.get() == stack.getItem() || Init.WILDBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (stack.getItem() == Init.WILDBERRY_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.ABSORPTION, 1200, 1));
                 list.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0));
             } else {
@@ -161,10 +161,10 @@ public class JuiceClass extends PotionItem {
         //Wanted
         if (player == null || !player.getAbilities().instabuild) {
             if (stack.isEmpty()) {
-                return new ItemStack(Items.GLASS_BOTTLE);
+                return new ItemStack(Init.GLASS_BOTTLE.get());
             }
             if (player != null) {
-                player.getInventory().add(new ItemStack(Items.GLASS_BOTTLE));
+                player.getInventory().add(new ItemStack(Init.GLASS_BOTTLE.get()));
             }
         }
 

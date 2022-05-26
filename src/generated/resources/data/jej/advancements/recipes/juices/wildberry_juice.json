@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "jej:strawberry_juice"
+      "jej:wildberry_juice"
     ]
   },
   "criteria": {
-    "has_straw_berry": {
+    "has_wild_berry": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "jej:straw_berry"
+              "jej:wild_berry"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "jej:strawberry_juice"
+        "recipe": "jej:wildberry_juice"
       }
     }
   },
   "requirements": [
     [
-      "has_straw_berry",
+      "has_wild_berry",
       "has_the_recipe"
     ]
   ]

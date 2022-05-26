@@ -25,10 +25,8 @@ public class IcyFootEffect extends MobEffect {
             BlockPos pos = livingEntity.getOnPos();
             Level level = livingEntity.getLevel();
             if (!level.isClientSide) {
-                if (level.isFluidAtPosition(pos, FluidState::isSource)) {
-                    if (level.isWaterAt(pos.below())) {
-                        level.setBlock(pos, Blocks.FROSTED_ICE.defaultBlockState(), 1);
-                    }
+                if (level.isWaterAt(pos)) {
+                    level.setBlock(pos, Blocks.ICE.defaultBlockState(), 1);
                 }
             }
         }

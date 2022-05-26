@@ -13,7 +13,7 @@ public class RegisterEvents {
     public static void ClientSetup(FMLClientSetupEvent event)
     {
         ItemBlockRenderTypes.setRenderLayer(Init.ICE_BERRY_BUSH.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(Init.STRAW_BERRY_BUSH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(Init.WILD_BERRY_BUSH.get(), RenderType.cutout());
 
     }
 }

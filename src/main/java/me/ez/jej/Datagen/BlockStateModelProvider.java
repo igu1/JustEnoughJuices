@@ -5,7 +5,6 @@ import me.ez.jej.Main;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -22,8 +21,8 @@ public class BlockStateModelProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        makeBush(Init.STRAW_BERRY_BUSH.get(),
-                "strawberry_bush_stage", "strawberry_bush_stage");
+        makeBush(Init.WILD_BERRY_BUSH.get(),
+                "wildberry_bush_stage", "wildberry_bush_stage");
 
         makeBush(Init.ICE_BERRY_BUSH.get(),"iceberry_bush_stage", "iceberry_bush_stage");
     }

@@ -7,13 +7,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "jej:straw_berry"
+          "name": "jej:wild_berry"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "jej:strawberry_bush",
+          "block": "jej:wildberry_bush",
           "properties": {
             "age": "3"
           }
@@ -45,13 +45,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "jej:straw_berry"
+          "name": "jej:wild_berry"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "jej:strawberry_bush",
+          "block": "jej:wildberry_bush",
           "properties": {
             "age": "3"
           }

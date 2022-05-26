@@ -38,7 +38,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //Apple Jucie
         ShapedRecipeBuilder.shaped(Init.APPLE_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.APPLE)
 
@@ -64,7 +64,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //Baked Potato
         ShapedRecipeBuilder.shaped(Init.BAKEDPOTATO_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.BAKED_POTATO)
 
@@ -90,7 +90,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //Carrot Juice
         ShapedRecipeBuilder.shaped(Init.CARROT_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.CARROT)
 
@@ -116,7 +116,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //Dried Kelp
         ShapedRecipeBuilder.shaped(Init.DRIEDKELP_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.DRIED_KELP)
 
@@ -142,7 +142,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //Ice Berry
         ShapedRecipeBuilder.shaped(Init.ICEBERRY_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Init.ICE_BERRY.get())
 
@@ -167,7 +167,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //----------------------------------------------
         ShapedRecipeBuilder.shaped(Init.MELON_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.MELON_SLICE)
 
@@ -193,7 +193,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //Pumpkin
         ShapedRecipeBuilder.shaped(Init.PUMPKIN_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.PUMPKIN)
 
@@ -218,7 +218,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
         //------------------------------------------
         ShapedRecipeBuilder.shaped(Init.SWEETBERRY_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.SWEET_BERRIES)
 
@@ -241,35 +241,35 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
                         .of(Init.SWEETBERRY_JUICE.get()).build()))
                 .save(recipeConsumer);
         //------------------------------------------
-        ShapedRecipeBuilder.shaped(Init.STRAWBERRY_JUICE.get())
+        ShapedRecipeBuilder.shaped(Init.WILDBERRY_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
-                .define('F', Init.STRAW_BERRY.get())
+                .define('F', Init.WILD_BERRY.get())
 
                 .pattern(" F ")
                 .pattern(" M ")
                 .pattern(" G ")
-                .unlockedBy("has_straw_berry", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(Init.STRAW_BERRY.get()).build()))
+                .unlockedBy("has_wild_berry", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Init.WILD_BERRY.get()).build()))
                 .save(recipeConsumer);
 
-        ShapedRecipeBuilder.shaped(Init.STRAWBERRY_JUICE_BOOSTED.get())
-                .define('J', Init.STRAWBERRY_JUICE.get())
+        ShapedRecipeBuilder.shaped(Init.WILDBERRY_JUICE_BOOSTED.get())
+                .define('J', Init.WILDBERRY_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
                 .define('E', Init.EMERALD_DUST.get())
 
                 .pattern(" M ")
                 .pattern(" E ")
                 .pattern(" J ")
-                .unlockedBy("has_straw_berry_juice", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(Init.STRAWBERRY_JUICE.get()).build()))
+                .unlockedBy("has_wild_berry_juice", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Init.WILDBERRY_JUICE.get()).build()))
                 .save(recipeConsumer);
         //------------------------------------------
 
         ShapedRecipeBuilder.shaped(Init.GLISTERING_MELON_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.GLISTERING_MELON_SLICE)
 
@@ -282,7 +282,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
 
         ShapedRecipeBuilder.shaped(Init.GOLDENAPPLE_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.GOLDEN_APPLE)
 
@@ -295,7 +295,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
 
         ShapedRecipeBuilder.shaped(Init.GOLDENCARROT_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
-                .define('G', Items.GLASS_BOTTLE)
+                .define('G', Init.GLASS_BOTTLE.get())
 
                 .define('F', Items.GOLDEN_CARROT)
 

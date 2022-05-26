@@ -27,7 +27,7 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleItem(Init.PUMPKIN_JUICE.get());
         simpleItem(Init.MELON_JUICE.get());
         simpleItem(Init.DRIEDKELP_JUICE.get());
-        simpleItem(Init.STRAWBERRY_JUICE.get());
+        simpleItem(Init.WILDBERRY_JUICE.get());
 
         simpleItem(Init.GOLDENCARROT_JUICE.get());
         simpleItem(Init.GOLDENAPPLE_JUICE.get());
@@ -41,13 +41,14 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleItem(Init.PUMPKIN_JUICE_BOOSTED.get());
         simpleItem(Init.MELON_JUICE_BOOSTED.get());
         simpleItem(Init.DRIEDKELP_JUICE_BOOSTED.get());
-        simpleItem(Init.STRAWBERRY_JUICE_BOOSTED.get());
+        simpleItem(Init.WILDBERRY_JUICE_BOOSTED.get());
 
         //Item
         simpleItem(Init.EMERALD_DUST.get());
+        simpleItem(Init.GLASS_BOTTLE.get());
 
         //BlockItem
-        simpleItem(Init.STRAW_BERRY.get());
+        simpleItem(Init.WILD_BERRY.get());
         simpleItem(Init.ICE_BERRY.get());
     }
 
