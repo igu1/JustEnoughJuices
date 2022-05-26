@@ -1,6 +1,6 @@
 0a24a8eb5894cb6928d36f06b2bd7cbf8bceb6ef assets/jej/blockstates/iceberry_bush.json
 cb4e2401818ebe4588040ff81df63ed00f2882ae assets/jej/blockstates/strawberry_bush.json
-49cb8c8efb825a94f5861ba35e0240b4e2017afc assets/jej/lang/en_us.json
+60d5a3d206fb4b80dd416fb1458f908a5951e805 assets/jej/lang/en_us.json
 19c4b359dd5a09e0f81491a9d0c414efc1fe1810 assets/jej/models/block/iceberry_bush_stage0.json
 8b50363424f3d44fd13ed2e14910e79dd71036f6 assets/jej/models/block/iceberry_bush_stage1.json
 d9ff6dde096a5cc326304ead2c77a2f5eca1d1f2 assets/jej/models/block/iceberry_bush_stage2.json
@@ -41,7 +41,6 @@ e9de878f2b3bbe1bc9ec204f86ac427852ca998f data/jej/advancements/recipes/juices/ap
 b95a03bff1feb3ffc21333fce194a062083d75ac data/jej/advancements/recipes/juices/carrot_juice_boosted.json
 44647a1f8b17f7b027a5febc18cacd743622dcd1 data/jej/advancements/recipes/juices/driedkelp_juice.json
 05a2bbe78d8338c80e257ebe8250ebe6bee0d788 data/jej/advancements/recipes/juices/driedkelp_juice_boosted.json
-11d4466e23c19e8b7810c66911b3541f72307f06 data/jej/advancements/recipes/juices/emerald_dust.json
 a6fcbd432651ffe79cc8589c71804789c220614a data/jej/advancements/recipes/juices/glistering_melon_juice.json
 47e9670c26d5b84570491aeef4c39ae01e2c83f4 data/jej/advancements/recipes/juices/goldenapple_juice.json
 5c52a1c37fcd14b7363be834ea08adbc0958cf41 data/jej/advancements/recipes/juices/goldencarrot_juice.json
@@ -55,6 +54,9 @@ be7db8fcc91ac67bf2c7f84f71ed6e2efaae0e40 data/jej/advancements/recipes/juices/st
 8bcc1938c4d1858cf3cf74d1745cfc9a17686fdf data/jej/advancements/recipes/juices/strawberry_juice_boosted.json
 07fcc05d91c6428070591313592196cf7375e7cb data/jej/advancements/recipes/juices/sweetberry_juice.json
 23800b1b2c99ac8009379ecad0e490c61ebdc732 data/jej/advancements/recipes/juices/sweetberry_juice_boosted.json
+11d4466e23c19e8b7810c66911b3541f72307f06 data/jej/advancements/recipes/misc/emerald_dust.json
+d931dec485bad1579e55e4274ab0592d37cfe796 data/jej/loot_tables/blocks/iceberry_bush.json
+6d5c829dab8c2c6e35e7077b407eaecdf4aba972 data/jej/loot_tables/blocks/strawberry_bush.json
 3ae313564f973a111aef9dfc5a0a133a371e6927 data/jej/recipes/apple_juice.json
 9fbbd2d982db3bfb0239f7e44bdc2739663a1709 data/jej/recipes/apple_juice_boosted.json
 b5f189cbbfa4f177e8bf28e787fff8a1e195bf3c data/jej/recipes/bakedpotato_juice.json

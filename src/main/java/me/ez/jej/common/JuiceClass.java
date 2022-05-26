@@ -173,7 +173,8 @@ public class JuiceClass extends PotionItem {
     }
 
     public @NotNull String getDescriptionId(ItemStack stack) {
-        return "item." + Objects.requireNonNull(stack.getItem().getRegistryName()).toString();
+        String registry_name =  Objects.requireNonNull(stack.getItem().getRegistryName()).toString().replace(":", ".");
+        return "item." + registry_name;
     }
 
     @Override

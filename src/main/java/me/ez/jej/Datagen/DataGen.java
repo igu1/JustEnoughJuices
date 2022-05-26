@@ -1,7 +1,8 @@
 package me.ez.jej.Datagen;
 
+import me.ez.jej.Datagen.LootTable.BlockLootTable;
 import me.ez.jej.Main;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.DataProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -18,5 +19,6 @@ public class DataGen {
         generator.addProvider(new BlockStateModelProvider(generator, existingFileHelper));
         generator.addProvider(new RecipeProvider(generator));
         generator.addProvider(new LanguageProvider(generator, "en_us"));
+        generator.addProvider(new LootTableProvider(generator));
     }
 }
