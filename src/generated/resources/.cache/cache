@@ -56,6 +56,7 @@ cc8faa857b6a4613ab8679111fced1fc03a44d35 data/jej/advancements/recipes/juices/ic
 e759e9be9f14a0014d12dcd432437f755786b0b4 data/jej/advancements/recipes/juices/wildberry_juice.json
 e6d633e279f5c26477bf9cc6b3b13c696eda0ab8 data/jej/advancements/recipes/juices/wildberry_juice_boosted.json
 11d4466e23c19e8b7810c66911b3541f72307f06 data/jej/advancements/recipes/misc/emerald_dust.json
+065e7c8f0dee715ab7d2a9c95a6cd2f93a5985d2 data/jej/advancements/recipes/misc/glass_bottle.json
 0796e41ca8d75a788e51a2c0f95f9915837c4df9 data/jej/loot_tables/blocks/iceberry_bush.json
 83897097905a855b4053d33bbac575bba4af2b35 data/jej/loot_tables/blocks/wildberry_bush.json
 92518809c16ca8109eb812988a2b790a73038cb8 data/jej/recipes/apple_juice.json
@@ -67,6 +68,7 @@ e3633a68123a3a7eb5caac471a49d51b95fadbeb data/jej/recipes/carrot_juice.json
 48be57e5a724e7db67b80c478e850c3144503739 data/jej/recipes/driedkelp_juice.json
 22584bf299d21c34ff85304b25d0cd9b070d77aa data/jej/recipes/driedkelp_juice_boosted.json
 79130cc115cf65afb271420707a26b3a2099b28b data/jej/recipes/emerald_dust.json
+b07555764832ddd813ade5795ea3ed3c74abd546 data/jej/recipes/glass_bottle.json
 90a96858fe4f69044c09897ad354f9d2cc4650a7 data/jej/recipes/glistering_melon_juice.json
 e68cba67ce025c10be52b43d0031da0ccc5afedc data/jej/recipes/goldenapple_juice.json
 bd5aa1b01558564ef5bedce33f7db741c03c4d5d data/jej/recipes/goldencarrot_juice.json

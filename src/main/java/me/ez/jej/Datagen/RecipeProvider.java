@@ -26,6 +26,16 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
                         .of(Items.EMERALD).build()))
                 .save(recipeConsumer);
 
+        ShapedRecipeBuilder.shaped(Init.GLASS_BOTTLE.get(), 3)
+                .define('G', Items.GLASS)
+                .define('N', Items.GOLD_NUGGET)
+                .pattern(" N ")
+                .pattern("G G")
+                .pattern(" G ")
+                .unlockedBy("has_glass", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.GLASS).build()))
+                .save(recipeConsumer);
+
         ShapedRecipeBuilder.shaped(Items.EMERALD)
                 .define('M', Init.EMERALD_DUST.get())
                 .pattern("MMM")
