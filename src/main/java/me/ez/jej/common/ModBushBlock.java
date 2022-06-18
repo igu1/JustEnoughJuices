@@ -55,7 +55,7 @@ public abstract class ModBushBlock extends BushBlock implements BonemealableBloc
         } else if (i > 1) {
             int j = 1 + level.random.nextInt(2);
             popResource(level, pos, new ItemStack(DropItem(state).getItem(), j + (flag ? 1 : 0)));
-            level.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+            level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             level.setBlock(pos, state.setValue(AGE, Integer.valueOf(1)), 2);
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else {
@@ -91,9 +91,9 @@ public abstract class ModBushBlock extends BushBlock implements BonemealableBloc
     }
 
     @Override
-    public void performBonemeal(ServerLevel p_57251_, Random p_57252_, BlockPos p_57253_, BlockState p_57254_) {
-        int i = Math.min(3, p_57254_.getValue(AGE) + 1);
-        p_57251_.setBlock(p_57253_, p_57254_.setValue(AGE, Integer.valueOf(i)), 2);
+    public void performBonemeal(ServerLevel serverLevel, Random random, BlockPos pos, BlockState state) {
+        int i = Math.min(3, state.getValue(AGE) + 1);
+        serverLevel.setBlock(pos, state.setValue(AGE, i), 2);
     }
 
     @Override

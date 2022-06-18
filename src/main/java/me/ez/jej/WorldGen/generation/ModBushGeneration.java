@@ -25,7 +25,6 @@ public class ModBushGeneration {
 
         }else if (types.contains(BiomeDictionary.Type.SWAMP)){
             List<Holder<PlacedFeature>> base = e.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
-
             base.add(ModPlacementFeature.PATCH_WILD_BUSH);
         }
     }

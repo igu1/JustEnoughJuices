@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 
 import java.util.List;
 
-public class ModConfiguredFeature {
+public class ModConfiguredFeature<E, I> {
 
     private static final List<Block> blocks = List.of(
             Blocks.GRASS_BLOCK,

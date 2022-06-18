@@ -40,6 +40,8 @@ public class LanguageProvider extends net.minecraftforge.common.data.LanguagePro
 
         //Bushes
         add(Init.ICE_BERRY.get(), "Ice Berry");
+        add(Init.TOMATO.get(), "Tomato");
+
 //        add(Init.ICE_BERRY_BUSH.get(), "IceBerry Bush");
 
         add(Init.WILD_BERRY.get(), "Wild Berry");
