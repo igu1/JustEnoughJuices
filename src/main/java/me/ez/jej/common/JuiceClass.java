@@ -196,7 +196,7 @@ public class JuiceClass extends PotionItem {
             components.add(NO_EFFECT);
         } else {
             for(MobEffectInstance mobeffectinstance : list) {
-                MutableComponent mutablecomponent = Component.literal(mobeffectinstance.getDescriptionId()).withStyle(ChatFormatting.GOLD);
+                MutableComponent mutablecomponent = Component.translatable(mobeffectinstance.getDescriptionId()).withStyle(ChatFormatting.GOLD);
                 MobEffect mobeffect = mobeffectinstance.getEffect();
                 Map<Attribute, AttributeModifier> map = mobeffect.getAttributeModifiers();
                 if (!map.isEmpty()) {
