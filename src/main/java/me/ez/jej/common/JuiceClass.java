@@ -2,14 +2,13 @@ package me.ez.jej.common;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
-import me.ez.jej.Init;
 import me.ez.jej.Main;
+import me.ez.jej.init.ItemInit;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffect;
@@ -28,11 +27,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class JuiceClass extends PotionItem {
 
-    private static final Component NO_EFFECT = (new TranslatableComponent("effect.none")).withStyle(ChatFormatting.GRAY);
+    private static final Component NO_EFFECT = (Component.translatable("effect.none")).withStyle(ChatFormatting.GRAY);
 
 
     public JuiceClass(Properties properties) {
@@ -43,86 +41,88 @@ public class JuiceClass extends PotionItem {
 
         List<MobEffectInstance> list = Lists.newArrayList();
 
-        if (Init.APPLE_JUICE.get() == stack.getItem() || Init.APPLE_JUICE_BOOSTED.get() == stack.getItem()) {
+        if (ItemInit.APPLE_JUICE.get() == stack.getItem() || ItemInit.APPLE_JUICE_BOOSTED.get() == stack.getItem()) {
             list.add(new MobEffectInstance(MobEffects.NIGHT_VISION, 3600, 0));
-            if (Init.APPLE_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (ItemInit.APPLE_JUICE_BOOSTED.get() == stack.getItem()) {
                 list.add(new MobEffectInstance(MobEffects.REGENERATION, 200, 0));
                 list.add(new MobEffectInstance(MobEffects.NIGHT_VISION, 3600, 0));
 
 
             }
 
-        } else if (Init.SWEETBERRY_JUICE.get() == stack.getItem() || Init.SWEETBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.SWEETBERRY_JUICE_BOOSTED.get()) {
+        } else if (ItemInit.SWEETBERRY_JUICE.get() == stack.getItem() || ItemInit.SWEETBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (stack.getItem() == ItemInit.SWEETBERRY_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1));
             } else {
                 list.add(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0));
             }
 
-        } else if (Init.MELON_JUICE.get() == stack.getItem() || Init.MELON_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.MELON_JUICE_BOOSTED.get()) {
+        } else if (ItemInit.MELON_JUICE.get() == stack.getItem() || ItemInit.MELON_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (stack.getItem() == ItemInit.MELON_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.JUMP, 3600, 1));
             } else {
                 list.add(new MobEffectInstance(MobEffects.JUMP, 1200, 0));
             }
 
-        } else if (Init.BAKEDPOTATO_JUICE.get() == stack.getItem() || Init.BAKEDPOTATO_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.BAKEDPOTATO_JUICE_BOOSTED.get()) {
+        } else if (ItemInit.BAKEDPOTATO_JUICE.get() == stack.getItem() || ItemInit.BAKEDPOTATO_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (stack.getItem() == ItemInit.BAKEDPOTATO_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.DIG_SPEED, 2400, 1));
             } else {
                 list.add(new MobEffectInstance(MobEffects.NIGHT_VISION, 3600, 0));
                 list.add(new MobEffectInstance(MobEffects.DIG_SPEED, 1600, 0));
             }
 
-        } else if (Init.PUMPKIN_JUICE.get() == stack.getItem() || Init.PUMPKIN_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.PUMPKIN_JUICE_BOOSTED.get()) {
+        } else if (ItemInit.PUMPKIN_JUICE.get() == stack.getItem() || ItemInit.PUMPKIN_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (stack.getItem() == ItemInit.PUMPKIN_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.INVISIBILITY, 2400, 0));
             } else {
                 list.add(new MobEffectInstance(MobEffects.INVISIBILITY, 1200, 0));
             }
 
-        } else if (Init.WILDBERRY_JUICE.get() == stack.getItem() || Init.WILDBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.WILDBERRY_JUICE_BOOSTED.get()) {
-                list.add(new MobEffectInstance(MobEffects.ABSORPTION, 1200, 1));
-                list.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0));
-            } else {
-                list.add(new MobEffectInstance(MobEffects.ABSORPTION, 1100, 0));
-            }
-
-        } else if (Init.ICEBERRY_JUICE.get() == stack.getItem() || Init.ICEBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.ICEBERRY_JUICE_BOOSTED.get()) {
-                list.add(new MobEffectInstance(Init.ICYFOOTEFFECT.get(), 1200, 0));
-                list.add(new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0));
-            } else {
-                list.add(new MobEffectInstance(Init.ICYFOOTEFFECT.get(), 1200, 0));
-            }
-
-        } else if (Init.DRIEDKELP_JUICE.get() == stack.getItem() || Init.DRIEDKELP_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.DRIEDKELP_JUICE_BOOSTED.get()) {
+        }
+//        else if (ItemInit.WILDBERRY_JUICE.get() == stack.getItem() || ItemInit.WILDBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
+//            if (stack.getItem() == ItemInit.WILDBERRY_JUICE_BOOSTED.get()) {
+//                list.add(new MobEffectInstance(MobEffects.ABSORPTION, 1200, 1));
+//                list.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0));
+//            } else {
+//                list.add(new MobEffectInstance(MobEffects.ABSORPTION, 1100, 0));
+//            }
+//
+//        } else if (ItemInit.ICEBERRY_JUICE.get() == stack.getItem() || ItemInit.ICEBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
+//            if (stack.getItem() == ItemInit.ICEBERRY_JUICE_BOOSTED.get()) {
+//                list.add(new MobEffectInstance(ItemInit.ICYFOOTEFFECT.get(), 1200, 0));
+//                list.add(new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0));
+//            } else {
+//                list.add(new MobEffectInstance(ItemInit.ICYFOOTEFFECT.get(), 1200, 0));
+//            }
+//
+//        }
+        else if (ItemInit.DRIEDKELP_JUICE.get() == stack.getItem() || ItemInit.DRIEDKELP_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (stack.getItem() == ItemInit.DRIEDKELP_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2400, 0));
                 list.add(new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0));
             } else {
                 list.add(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 1200, 0));
             }
 
-        } else if (Init.CARROT_JUICE.get() == stack.getItem() || Init.CARROT_JUICE_BOOSTED.get() == stack.getItem()) {
-            if (stack.getItem() == Init.CARROT_JUICE_BOOSTED.get()) {
+        } else if (ItemInit.CARROT_JUICE.get() == stack.getItem() || ItemInit.CARROT_JUICE_BOOSTED.get() == stack.getItem()) {
+            if (stack.getItem() == ItemInit.CARROT_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 0));
                 list.add(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3600, 0));
             } else {
                 list.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0));
             }
-        } else if (Init.GOLDENAPPLE_JUICE.get() == stack.getItem()) {
+        } else if (ItemInit.GOLDENAPPLE_JUICE.get() == stack.getItem()) {
             list.add(new MobEffectInstance(MobEffects.ABSORPTION, 3600, 0));
             list.add(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0));
             list.add(new MobEffectInstance(MobEffects.NIGHT_VISION, 3600, 0));
 
-        } else if (Init.GOLDENCARROT_JUICE.get() == stack.getItem()) {
+        } else if (ItemInit.GOLDENCARROT_JUICE.get() == stack.getItem()) {
             list.add(new MobEffectInstance(MobEffects.NIGHT_VISION, 3600, 0));
             list.add(new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0));
             list.add(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2400, 1));
 
-        } else if (Init.GLISTERING_MELON_JUICE.get() == stack.getItem()) {
+        } else if (ItemInit.GLISTERING_MELON_JUICE.get() == stack.getItem()) {
             list.add(new MobEffectInstance(MobEffects.REGENERATION, 200, 0));
             list.add(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0));
             list.add(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 0));
@@ -161,20 +161,19 @@ public class JuiceClass extends PotionItem {
         //Wanted
         if (player == null || !player.getAbilities().instabuild) {
             if (stack.isEmpty()) {
-                return new ItemStack(Init.GLASS_BOTTLE.get());
+                return new ItemStack(ItemInit.GLASS_BOTTLE.get());
             }
             if (player != null) {
-                player.getInventory().add(new ItemStack(Init.GLASS_BOTTLE.get()));
+                player.getInventory().add(new ItemStack(ItemInit.GLASS_BOTTLE.get()));
             }
         }
 
-        level.gameEvent(livingEntity, GameEvent.DRINKING_FINISH, livingEntity.eyeBlockPosition());
+        level.gameEvent(livingEntity, GameEvent.ITEM_INTERACT_FINISH, livingEntity.getOnPos());
         return stack;
     }
 
     public @NotNull String getDescriptionId(ItemStack stack) {
-        String registry_name =  Objects.requireNonNull(stack.getItem().getRegistryName()).toString().replace(":", ".");
-        return "item." + registry_name;
+        return stack.getItem().getDescription().getString();
     }
 
     @Override
@@ -184,7 +183,7 @@ public class JuiceClass extends PotionItem {
 
     @Override
     public void fillItemCategory(@NotNull CreativeModeTab creativeModeTab, @NotNull NonNullList<ItemStack> stacks) {
-        if (this.allowdedIn(creativeModeTab)) {
+        if (this.allowedIn(creativeModeTab)) {
             stacks.add(new ItemStack(this));
         }
     }
@@ -197,7 +196,7 @@ public class JuiceClass extends PotionItem {
             components.add(NO_EFFECT);
         } else {
             for(MobEffectInstance mobeffectinstance : list) {
-                MutableComponent mutablecomponent = new TranslatableComponent(mobeffectinstance.getDescriptionId()).withStyle(ChatFormatting.GOLD);
+                MutableComponent mutablecomponent = Component.literal(mobeffectinstance.getDescriptionId()).withStyle(ChatFormatting.GOLD);
                 MobEffect mobeffect = mobeffectinstance.getEffect();
                 Map<Attribute, AttributeModifier> map = mobeffect.getAttributeModifiers();
                 if (!map.isEmpty()) {
@@ -209,11 +208,11 @@ public class JuiceClass extends PotionItem {
                 }
 
                 if (mobeffectinstance.getAmplifier() > 0) {
-                    mutablecomponent = new TranslatableComponent("potion.withAmplifier", mutablecomponent, new TranslatableComponent("potion.potency." + mobeffectinstance.getAmplifier())).withStyle(ChatFormatting.RED);
+                    mutablecomponent = Component.translatable("potion.withAmplifier", mutablecomponent, Component.translatable("potion.potency." + mobeffectinstance.getAmplifier())).withStyle(ChatFormatting.RED);
                 }
 
                 if (mobeffectinstance.getDuration() > 20) {
-                    mutablecomponent = new TranslatableComponent("potion.withDuration", mutablecomponent, MobEffectUtil.formatDuration(mobeffectinstance, 1.0F));
+                    mutablecomponent = Component.translatable("potion.withDuration", mutablecomponent, MobEffectUtil.formatDuration(mobeffectinstance, 1.0F));
                 }
 
                 components.add(mutablecomponent.withStyle(mobeffect.getCategory().getTooltipFormatting()));

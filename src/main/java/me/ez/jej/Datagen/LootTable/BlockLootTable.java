@@ -1,6 +1,7 @@
 package me.ez.jej.Datagen.LootTable;
 
-import me.ez.jej.Init;
+import me.ez.jej.init.BlockInit;
+import me.ez.jej.init.EffectInit;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -22,13 +23,13 @@ public class BlockLootTable extends BlockLoot {
 
     @Override
     protected void addTables() {
-        BushLootTable(Init.ICE_BERRY_BUSH.get(), Init.ICE_BERRY.get());
-        BushLootTable(Init.WILD_BERRY_BUSH.get(), Init.WILD_BERRY.get());
+//        BushLootTable(Init.ICE_BERRY_BUSH.get(), Init.ICE_BERRY.get());
+//        BushLootTable(Init.WILD_BERRY_BUSH.get(), Init.WILD_BERRY.get());
     }
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return Init.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 
     private void BushLootTable(BushBlock bushBlock, ItemLike itemLike){

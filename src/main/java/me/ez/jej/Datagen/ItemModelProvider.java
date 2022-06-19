@@ -1,13 +1,14 @@
 package me.ez.jej.Datagen;
 
 
-import me.ez.jej.Init;
+import me.ez.jej.init.ItemInit;
 import me.ez.jej.Main;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ItemModelProvider extends net.minecraftforge.client.model.generators.ItemModelProvider {
 
@@ -19,42 +20,42 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
     protected void registerModels() {
 
         //Juice
-        simpleItem(Init.APPLE_JUICE.get());
-        simpleItem(Init.CARROT_JUICE.get());
-        simpleItem(Init.BAKEDPOTATO_JUICE.get());
-        simpleItem(Init.SWEETBERRY_JUICE.get());
-        simpleItem(Init.ICEBERRY_JUICE.get());
-        simpleItem(Init.PUMPKIN_JUICE.get());
-        simpleItem(Init.MELON_JUICE.get());
-        simpleItem(Init.DRIEDKELP_JUICE.get());
-        simpleItem(Init.WILDBERRY_JUICE.get());
+        simpleItem(ItemInit.APPLE_JUICE);
+        simpleItem(ItemInit.CARROT_JUICE);
+        simpleItem(ItemInit.BAKEDPOTATO_JUICE);
+        simpleItem(ItemInit.SWEETBERRY_JUICE);
+//        simpleItem(Init.ICEBERRY_JUICE);
+        simpleItem(ItemInit.PUMPKIN_JUICE);
+        simpleItem(ItemInit.MELON_JUICE);
+        simpleItem(ItemInit.DRIEDKELP_JUICE);
+//        simpleItem(Init.WILDBERRY_JUICE);
 
-        simpleItem(Init.GOLDENCARROT_JUICE.get());
-        simpleItem(Init.GOLDENAPPLE_JUICE.get());
-        simpleItem(Init.GLISTERING_MELON_JUICE.get());
+        simpleItem(ItemInit.GOLDENCARROT_JUICE);
+        simpleItem(ItemInit.GOLDENAPPLE_JUICE);
+        simpleItem(ItemInit.GLISTERING_MELON_JUICE);
 
-        simpleItem(Init.APPLE_JUICE_BOOSTED.get());
-        simpleItem(Init.CARROT_JUICE_BOOSTED.get());
-        simpleItem(Init.BAKEDPOTATO_JUICE_BOOSTED.get());
-        simpleItem(Init.SWEETBERRY_JUICE_BOOSTED.get());
-        simpleItem(Init.ICEBERRY_JUICE_BOOSTED.get());
-        simpleItem(Init.PUMPKIN_JUICE_BOOSTED.get());
-        simpleItem(Init.MELON_JUICE_BOOSTED.get());
-        simpleItem(Init.DRIEDKELP_JUICE_BOOSTED.get());
-        simpleItem(Init.WILDBERRY_JUICE_BOOSTED.get());
+        simpleItem(ItemInit.APPLE_JUICE_BOOSTED);
+        simpleItem(ItemInit.CARROT_JUICE_BOOSTED);
+        simpleItem(ItemInit.BAKEDPOTATO_JUICE_BOOSTED);
+        simpleItem(ItemInit.SWEETBERRY_JUICE_BOOSTED);
+//        simpleItem(Init.ICEBERRY_JUICE_BOOSTED);
+        simpleItem(ItemInit.PUMPKIN_JUICE_BOOSTED);
+        simpleItem(ItemInit.MELON_JUICE_BOOSTED);
+        simpleItem(ItemInit.DRIEDKELP_JUICE_BOOSTED);
+//        simpleItem(Init.WILDBERRY_JUICE_BOOSTED);
 
         //Item
-        simpleItem(Init.EMERALD_DUST.get());
-        simpleItem(Init.GLASS_BOTTLE.get());
+        simpleItem(ItemInit.EMERALD_DUST);
+        simpleItem(ItemInit.GLASS_BOTTLE);
 
         //BlockItem
-        simpleItem(Init.WILD_BERRY.get());
-        simpleItem(Init.ICE_BERRY.get());
+//        simpleItem(Init.WILD_BERRY);
+//        simpleItem(Init.ICE_BERRY);
     }
 
-    private ItemModelBuilder simpleItem(Item item) {
-        return withExistingParent(item.getRegistryName().getPath(),
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Main.MOD_ID,"item/" + item.getRegistryName().getPath()));
+                new ResourceLocation(Main.MOD_ID,"item/" + item.getId().getPath()));
     }
 }

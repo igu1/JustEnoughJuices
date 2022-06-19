@@ -15,10 +15,10 @@ public class DataGen {
         net.minecraft.data.DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(new ItemModelProvider(generator, existingFileHelper));
-        generator.addProvider(new BlockStateModelProvider(generator, existingFileHelper));
-        generator.addProvider(new RecipeProvider(generator));
-        generator.addProvider(new LanguageProvider(generator, "en_us"));
-        generator.addProvider(new LootTableProvider(generator));
+        generator.addProvider(true,new ItemModelProvider(generator, existingFileHelper));
+        generator.addProvider(true,new BlockStateModelProvider(generator, existingFileHelper));
+        generator.addProvider(true,new RecipeProvider(generator));
+        generator.addProvider(true,new LanguageProvider(generator, "en_us"));
+        generator.addProvider(true,new LootTableProvider(generator));
     }
 }

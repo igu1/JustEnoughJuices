@@ -2,6 +2,7 @@ package me.ez.jej.common.Effects;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,7 +23,6 @@ public class IcyFootEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity livingEntity, int amp) {
         if (livingEntity.isOnGround()) {
-            Random r = new Random();
             BlockState blockstate = Blocks.FROSTED_ICE.defaultBlockState();
             float f = (float)Math.min(16, 2 + amp);
             BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
@@ -36,7 +36,7 @@ public class IcyFootEffect extends MobEffect {
                         boolean isFull = blockstate2.getBlock() == Blocks.WATER && blockstate2.getValue(LiquidBlock.LEVEL) == 0;
                         if (blockstate2.getMaterial() == Material.WATER && isFull && blockstate.canSurvive(livingEntity.level, blockpos) && livingEntity.level.isUnobstructed(blockstate, blockpos, CollisionContext.empty()) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(livingEntity, net.minecraftforge.common.util.BlockSnapshot.create(livingEntity.level.dimension(), livingEntity.level, blockpos), net.minecraft.core.Direction.UP)) {
                             livingEntity.level.setBlockAndUpdate(blockpos, blockstate);
-                            livingEntity.level.scheduleTick(blockpos, Blocks.FROSTED_ICE, Mth.nextInt(r, 60, 120));
+                            livingEntity.level.scheduleTick(blockpos, Blocks.FROSTED_ICE, Mth.nextInt(livingEntity.level.random, 60, 120));
                         }
                     }
                 }

@@ -1,10 +1,10 @@
 package me.ez.jej.common;
 
-import me.ez.jej.Init;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -24,8 +24,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.Random;
-
 public abstract class ModBushBlock extends BushBlock implements BonemealableBlock {
 
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
@@ -39,11 +37,13 @@ public abstract class ModBushBlock extends BushBlock implements BonemealableBloc
 
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-        return state.getBlock() == Init.ICE_BERRY_BUSH.get() ? Init.ICE_BERRY.get().getDefaultInstance() : Init.WILD_BERRY.get().getDefaultInstance();
+//        return state.getBlock() == Init.ICE_BERRY_BUSH.get() ? Init.ICE_BERRY.get().getDefaultInstance() : Init.WILD_BERRY.get().getDefaultInstance();
+        return null;
     }
 
     public ItemStack DropItem(BlockState state){
-        return state.getBlock() == Init.ICE_BERRY_BUSH.get() ? Init.ICE_BERRY.get().getDefaultInstance() : Init.WILD_BERRY.get().getDefaultInstance();
+//        return state.getBlock() == Init.ICE_BERRY_BUSH.get() ? Init.ICE_BERRY.get().getDefaultInstance() : Init.WILD_BERRY.get().getDefaultInstance();
+        return null;
     }
 
     @Override
@@ -86,18 +86,18 @@ public abstract class ModBushBlock extends BushBlock implements BonemealableBloc
         return p_57262_.getValue(AGE) < 3;
     }
     @Override
-    public boolean isBonemealSuccess(Level p_57265_, Random p_57266_, BlockPos p_57267_, BlockState p_57268_) {
+    public boolean isBonemealSuccess(Level p_57265_, RandomSource p_57266_, BlockPos p_57267_, BlockState p_57268_) {
         return true;
     }
 
     @Override
-    public void performBonemeal(ServerLevel serverLevel, Random random, BlockPos pos, BlockState state) {
+    public void performBonemeal(ServerLevel serverLevel, RandomSource random, BlockPos pos, BlockState state) {
         int i = Math.min(3, state.getValue(AGE) + 1);
         serverLevel.setBlock(pos, state.setValue(AGE, i), 2);
     }
 
     @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, Random random) {
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         int i = state.getValue(AGE);
         if (i < 3 && level.getRawBrightness(pos.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(level, pos, state,random.nextInt(5) == 0)){
             level.setBlock(pos,state.setValue(AGE, Integer.valueOf(i + 1)), 2);

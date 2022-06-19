@@ -1,15 +1,12 @@
 package me.ez.jej;
 
-import me.ez.jej.WorldGen.generation.ModBushGeneration;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import me.ez.jej.init.BlockInit;
+import me.ez.jej.init.EffectInit;
+import me.ez.jej.init.ItemInit;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -22,9 +19,9 @@ public class Main{
 
     public Main()
     {
-        Init.EFFECT.register(FMLJavaModLoadingContext.get().getModEventBus());
-        Init.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        Init.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        EffectInit.EFFECT.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ItemInit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        BlockInit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         FMLJavaModLoadingContext.get().getModEventBus().addListener(EventPriority.HIGH, this::ClientSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -32,8 +29,8 @@ public class Main{
     public void ClientSetup(FMLClientSetupEvent event)
     {
         System.out.println("Setting Client Setup");
-        ItemBlockRenderTypes.setRenderLayer(Init.ICE_BERRY_BUSH.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(Init.WILD_BERRY_BUSH.get(), RenderType.cutout());
+//        ItemBlockRenderTypes.setRenderLayer(Init.ICE_BERRY_BUSH.get(), RenderType.cutout());
+//        ItemBlockRenderTypes.setRenderLayer(Init.WILD_BERRY_BUSH.get(), RenderType.cutout());
     }
 
     public static class JuiceTab extends CreativeModeTab{
@@ -44,7 +41,7 @@ public class Main{
 
         @Override
         public ItemStack makeIcon() {
-            return Init.GOLDENAPPLE_JUICE.get().getDefaultInstance();
+            return ItemInit.GOLDENAPPLE_JUICE.get().getDefaultInstance();
         }
     }
 }
