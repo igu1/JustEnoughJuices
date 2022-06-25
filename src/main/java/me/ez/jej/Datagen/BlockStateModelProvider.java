@@ -20,13 +20,6 @@ public class BlockStateModelProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-//        makeBush(Init.WILD_BERRY_BUSH.get(),
-//                "wildberry_bush_stage",
-//                "wildberry_bush_stage");
-//        makeBush(Init.ICE_BERRY_BUSH.get(),
-//                "iceberry_bush_stage",
-//                "iceberry_bush_stage");
-//        simpleBlock(Init.TOMATO.get());
     }
 
     public void makeBush(BushBlock block, String modelName, String textureName) {

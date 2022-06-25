@@ -80,23 +80,6 @@ public class JuiceClass extends PotionItem {
             }
 
         }
-//        else if (ItemInit.WILDBERRY_JUICE.get() == stack.getItem() || ItemInit.WILDBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
-//            if (stack.getItem() == ItemInit.WILDBERRY_JUICE_BOOSTED.get()) {
-//                list.add(new MobEffectInstance(MobEffects.ABSORPTION, 1200, 1));
-//                list.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0));
-//            } else {
-//                list.add(new MobEffectInstance(MobEffects.ABSORPTION, 1100, 0));
-//            }
-//
-//        } else if (ItemInit.ICEBERRY_JUICE.get() == stack.getItem() || ItemInit.ICEBERRY_JUICE_BOOSTED.get() == stack.getItem()) {
-//            if (stack.getItem() == ItemInit.ICEBERRY_JUICE_BOOSTED.get()) {
-//                list.add(new MobEffectInstance(ItemInit.ICYFOOTEFFECT.get(), 1200, 0));
-//                list.add(new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0));
-//            } else {
-//                list.add(new MobEffectInstance(ItemInit.ICYFOOTEFFECT.get(), 1200, 0));
-//            }
-//
-//        }
         else if (ItemInit.DRIEDKELP_JUICE.get() == stack.getItem() || ItemInit.DRIEDKELP_JUICE_BOOSTED.get() == stack.getItem()) {
             if (stack.getItem() == ItemInit.DRIEDKELP_JUICE_BOOSTED.get()) {
                 list.add(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2400, 0));

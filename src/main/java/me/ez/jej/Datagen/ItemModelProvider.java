@@ -24,11 +24,9 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleItem(ItemInit.CARROT_JUICE);
         simpleItem(ItemInit.BAKEDPOTATO_JUICE);
         simpleItem(ItemInit.SWEETBERRY_JUICE);
-//        simpleItem(Init.ICEBERRY_JUICE);
         simpleItem(ItemInit.PUMPKIN_JUICE);
         simpleItem(ItemInit.MELON_JUICE);
         simpleItem(ItemInit.DRIEDKELP_JUICE);
-//        simpleItem(Init.WILDBERRY_JUICE);
 
         simpleItem(ItemInit.GOLDENCARROT_JUICE);
         simpleItem(ItemInit.GOLDENAPPLE_JUICE);
@@ -38,19 +36,13 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleItem(ItemInit.CARROT_JUICE_BOOSTED);
         simpleItem(ItemInit.BAKEDPOTATO_JUICE_BOOSTED);
         simpleItem(ItemInit.SWEETBERRY_JUICE_BOOSTED);
-//        simpleItem(Init.ICEBERRY_JUICE_BOOSTED);
         simpleItem(ItemInit.PUMPKIN_JUICE_BOOSTED);
         simpleItem(ItemInit.MELON_JUICE_BOOSTED);
         simpleItem(ItemInit.DRIEDKELP_JUICE_BOOSTED);
-//        simpleItem(Init.WILDBERRY_JUICE_BOOSTED);
 
         //Item
         simpleItem(ItemInit.EMERALD_DUST);
         simpleItem(ItemInit.GLASS_BOTTLE);
-
-        //BlockItem
-//        simpleItem(Init.WILD_BERRY);
-//        simpleItem(Init.ICE_BERRY);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

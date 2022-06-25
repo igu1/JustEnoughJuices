@@ -34,14 +34,6 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIEDKELP_JUICE = registerJuice("driedkelp_juice");
     public static final RegistryObject<Item> DRIEDKELP_JUICE_BOOSTED = registerJuiceBoosted("driedkelp_juice_boosted");
 
-
-//    public static final RegistryObject<Item> ICEBERRY_JUICE = registerJuice("iceberry_juice");
-//    public static final RegistryObject<Item> ICEBERRY_JUICE_BOOSTED = registerJuiceBoosted("iceberry_juice_boosted");
-
-//    public static final RegistryObject<Item> WILDBERRY_JUICE = registerJuice("wildberry_juice");
-//    public static final RegistryObject<Item> WILDBERRY_JUICE_BOOSTED = registerJuiceBoosted("wildberry_juice_boosted");
-
-
     public static final RegistryObject<Item> GOLDENAPPLE_JUICE = registerJuice("goldenapple_juice");
 
     public static final RegistryObject<Item> GOLDENCARROT_JUICE = registerJuice("goldencarrot_juice");

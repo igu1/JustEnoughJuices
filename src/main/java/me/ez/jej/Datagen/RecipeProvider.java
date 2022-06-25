@@ -148,32 +148,6 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
                 .unlockedBy("has_kelp_juice", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ItemInit.DRIEDKELP_JUICE.get()).build()))
                 .save(recipeConsumer);
-        //--------------------------------------------------------
-        //Ice Berry
-//        ShapedRecipeBuilder.shaped(Init.ICEBERRY_JUICE.get())
-//                .define('M', Items.MILK_BUCKET)
-//                .define('G', Init.GLASS_BOTTLE.get())
-//
-//                .define('F', Init.ICE_BERRY.get())
-//
-//                .pattern(" F ")
-//                .pattern(" M ")
-//                .pattern(" G ")
-//                .unlockedBy("has_ice_berry", inventoryTrigger(ItemPredicate.Builder.item()
-//                        .of(Init.ICE_BERRY.get()).build()))
-//                .save(recipeConsumer);
-//
-//        ShapedRecipeBuilder.shaped(Init.ICEBERRY_JUICE_BOOSTED.get())
-//                .define('J', Init.ICEBERRY_JUICE.get())
-//                .define('M', Items.MILK_BUCKET)
-//                .define('E', Init.EMERALD_DUST.get())
-//
-//                .pattern(" M ")
-//                .pattern(" E ")
-//                .pattern(" J ")
-//                .unlockedBy("has_ice_berry_juice", inventoryTrigger(ItemPredicate.Builder.item()
-//                        .of(Init.ICEBERRY_JUICE.get()).build()))
-//                .save(recipeConsumer);
         //----------------------------------------------
         ShapedRecipeBuilder.shaped(ItemInit.MELON_JUICE.get())
                 .define('M', Items.MILK_BUCKET)
@@ -250,31 +224,6 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
                 .unlockedBy("has_sweet_berry_juice", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ItemInit.SWEETBERRY_JUICE.get()).build()))
                 .save(recipeConsumer);
-        //------------------------------------------
-//        ShapedRecipeBuilder.shaped(Init.WILDBERRY_JUICE.get())
-//                .define('M', Items.MILK_BUCKET)
-//                .define('G', Init.GLASS_BOTTLE.get())
-//
-//                .define('F', Init.WILD_BERRY.get())
-//
-//                .pattern(" F ")
-//                .pattern(" M ")
-//                .pattern(" G ")
-//                .unlockedBy("has_wild_berry", inventoryTrigger(ItemPredicate.Builder.item()
-//                        .of(Init.WILD_BERRY.get()).build()))
-//                .save(recipeConsumer);
-//
-//        ShapedRecipeBuilder.shaped(Init.WILDBERRY_JUICE_BOOSTED.get())
-//                .define('J', Init.WILDBERRY_JUICE.get())
-//                .define('M', Items.MILK_BUCKET)
-//                .define('E', Init.EMERALD_DUST.get())
-//
-//                .pattern(" M ")
-//                .pattern(" E ")
-//                .pattern(" J ")
-//                .unlockedBy("has_wild_berry_juice", inventoryTrigger(ItemPredicate.Builder.item()
-//                        .of(Init.WILDBERRY_JUICE.get()).build()))
-//                .save(recipeConsumer);
         //------------------------------------------
 
         ShapedRecipeBuilder.shaped(ItemInit.GLISTERING_MELON_JUICE.get())
